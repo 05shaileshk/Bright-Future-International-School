@@ -33,27 +33,29 @@ function openTab(evt, tabName) {
 
 // admission
 function handleFormSubmit(event) {
-    event.preventDefault(); // Page refresh hone se rokta hai
+    if (event) event.preventDefault();
+
+    // Required fields check karna (Simple Manual Check)
+    const studentName = document.getElementById('studentName').value;
+    const phone = document.getElementById('phone').value;
+
+    if(!studentName || !phone) {
+        alert("Kripya saare required fields bharein!");
+        return;
+    }
 
     const toast = document.getElementById('successToast');
-    
-    // Toast ko screen par slide-down karein
-    toast.classList.add('show');
+    if (toast) {
+        toast.classList.add('show');
+    }
 
-    // Form clear karein
+    // Form reset
     document.getElementById('admissionForm').reset();
 
-    // 4 seconds (4000ms) 
     setTimeout(() => {
-        toast.classList.remove('show');
+        if (toast) toast.classList.remove('show');
     }, 4000);
 }
-
-// Cross (X) icon par click 
-function closeToast() {
-    document.getElementById('successToast').classList.remove('show');
-}
-
 
 //    
 
