@@ -33,34 +33,38 @@ function openTab(evt, tabName) {
 
 // Admission Form Submit Handler
 function handleFormSubmit(event) {
-    if (event) event.preventDefault(); // Page reload rokega
+    if (event) event.preventDefault(); // Default reload rokega
 
-    const toast = document.getElementById('successToast');
     const form = document.getElementById('admissionForm');
-    
+    const toast = document.getElementById('successToast');
+
+    // 1. Browser ki HTML5 native validation manually check karein
+    // Agar koi required field khali hai, toh ye submit ko yahin rok dega
+    if (form && !form.checkValidity()) {
+        form.reportValidity(); // Khali fields par browser ka default alert dikhayega
+        return false;
+    }
+
+    // 2. Agar sab sahi bhara hai, tabhi ye success message chalega
     if (toast) {
-        // Forcefully CSS styles aur show class apply karein
         toast.style.display = "flex"; 
         toast.style.opacity = "1";
         toast.style.visibility = "visible";
         toast.style.transform = "translateY(0)";
         toast.classList.add('show');
 
-        // Form ko clear karein
+        // Form clear karein
         if (form) form.reset();
 
-        // 4 Second baad toast ko automatic hide karein
+        // 4 Second baad toast hide karein
         setTimeout(() => {
             toast.classList.remove('show');
             toast.style.opacity = "0";
             toast.style.visibility = "hidden";
             toast.style.transform = "translateY(-20px)";
         }, 4000);
-    } else {
-        console.error("Error: successToast element nahi mila!");
     }
 }
-
 //    
 
         // 2. Lightbox Open
@@ -104,14 +108,23 @@ function handleFormSubmit(event) {
             });
         } 
 
+// Contact Form Submit Handler
+
+
 function handleContactSubmit(event) {
     if (event) event.preventDefault();
 
-    const toast = document.getElementById('contactToast');
     const form = document.getElementById('contactForm');
-    
+    const toast = document.getElementById('contactToast');
+
+    // 1. Manually check required fields
+    if (form && !form.checkValidity()) {
+        form.reportValidity();
+        return false;
+    }
+
+    // 2. Show Success Message
     if (toast) {
-        // Forcefully CSS styles aur show class apply karein
         toast.style.display = "flex";
         toast.style.opacity = "1";
         toast.style.visibility = "visible";
@@ -126,27 +139,8 @@ function handleContactSubmit(event) {
             toast.style.visibility = "hidden";
             toast.style.transform = "translateY(-20px)";
         }, 4000);
-    } else {
-        console.error("Error: contactToast element nahi mila!");
     }
 }
-
-// Manual Close Function (Dono Toast ke liye)
-function closeToast() {
-    const successToast = document.getElementById('successToast');
-    const contactToast = document.getElementById('contactToast');
-    
-    [successToast, contactToast].forEach(toast => {
-        if (toast) {
-            toast.classList.remove('show');
-            toast.style.opacity = "0";
-            toast.style.visibility = "hidden";
-            toast.style.transform = "translateY(-20px)";
-        }
-    });
-}
-
-
 
 
  
