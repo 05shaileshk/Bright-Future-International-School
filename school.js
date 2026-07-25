@@ -31,7 +31,7 @@ function openTab(evt, tabName) {
             evt.currentTarget.classList.add("active");
         }
 
-
+// admission
 function handleFormSubmit(event) {
     event.preventDefault(); // Page refresh hone se rokta hai
 
