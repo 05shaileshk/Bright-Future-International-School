@@ -120,6 +120,10 @@ function handleContactSubmit(event) {
         const studentName = document.getElementById('studentName').value;
     const phone = document.getElementById('phone').value;
 
+    // Required fields check karna (Simple Manual Check)
+    const studentName = document.getElementById('studentName').value;
+    const phone = document.getElementById('phone').value;
+
     if(!studentName || !phone) {
         alert("Kripya saare required fields bharein!");
         return;
