@@ -1386,7 +1386,8 @@ footer a {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #e5f014;
+  /* background-color: #e5f014; */
+  color: white;
 }
 
 .toast-content i {
