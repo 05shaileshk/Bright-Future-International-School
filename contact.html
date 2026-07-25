@@ -103,7 +103,7 @@
                      <!-- Right box: contact form -->
                       <div class="contact-form-box">
                         <h2>Send us a Message</h2>
-                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)" data-netlify="false" ng-non-bindable novalidate>
                         <div class="form-group">
                             <label for="fullName"> Full Name*</label>
                             <input type="text" id="fullName" placeholder="Enter a FullName" required>
