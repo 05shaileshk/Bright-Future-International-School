@@ -117,6 +117,13 @@ function handleContactSubmit(event) {
         if (form) {
             form.reset();
         }
+        const studentName = document.getElementById('studentName').value;
+    const phone = document.getElementById('phone').value;
+
+    if(!studentName || !phone) {
+        alert("Kripya saare required fields bharein!");
+        return;
+    }
 
         // 4 Second baad Toast ko automatic hide kar dein
         setTimeout(() => {
