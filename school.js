@@ -31,30 +31,34 @@ function openTab(evt, tabName) {
             evt.currentTarget.classList.add("active");
         }
 
-// admission
+// Admission Form Submit Handler
 function handleFormSubmit(event) {
-    if (event) event.preventDefault();
-
-    // Required fields check karna (Simple Manual Check)
-    const studentName = document.getElementById('studentName').value;
-    const phone = document.getElementById('phone').value;
-
-    if(!studentName || !phone) {
-        alert("Kripya saare required fields bharein!");
-        return;
-    }
+    if (event) event.preventDefault(); // Page reload rokega
 
     const toast = document.getElementById('successToast');
+    const form = document.getElementById('admissionForm');
+    
     if (toast) {
+        // Forcefully CSS styles aur show class apply karein
+        toast.style.display = "flex"; 
+        toast.style.opacity = "1";
+        toast.style.visibility = "visible";
+        toast.style.transform = "translateY(0)";
         toast.classList.add('show');
+
+        // Form ko clear karein
+        if (form) form.reset();
+
+        // 4 Second baad toast ko automatic hide karein
+        setTimeout(() => {
+            toast.classList.remove('show');
+            toast.style.opacity = "0";
+            toast.style.visibility = "hidden";
+            toast.style.transform = "translateY(-20px)";
+        }, 4000);
+    } else {
+        console.error("Error: successToast element nahi mila!");
     }
-
-    // Form reset
-    document.getElementById('admissionForm').reset();
-
-    setTimeout(() => {
-        if (toast) toast.classList.remove('show');
-    }, 4000);
 }
 
 //    
@@ -100,50 +104,46 @@ function handleFormSubmit(event) {
             });
         } 
 
-// contact form submit handle function
-
-// Contact Form Submit Handler Function
 function handleContactSubmit(event) {
-    event.preventDefault(); // Default Page Reload ko Rokega
+    if (event) event.preventDefault();
 
     const toast = document.getElementById('contactToast');
     const form = document.getElementById('contactForm');
     
     if (toast) {
-        // Class add karke Toast dikhayein
+        // Forcefully CSS styles aur show class apply karein
+        toast.style.display = "flex";
+        toast.style.opacity = "1";
+        toast.style.visibility = "visible";
+        toast.style.transform = "translateY(0)";
         toast.classList.add('show');
 
-        // Form fields clear karein (agar form element exit karta hai)
-        if (form) {
-            form.reset();
-        }
-        const studentName = document.getElementById('studentName').value;
-    const phone = document.getElementById('phone').value;
+        if (form) form.reset();
 
-    // Required fields check karna (Simple Manual Check)
-    const studentName = document.getElementById('studentName').value;
-    const phone = document.getElementById('phone').value;
-
-    if(!studentName || !phone) {
-        alert("Kripya saare required fields bharein!");
-        return;
-    }
-
-        // 4 Second baad Toast ko automatic hide kar dein
         setTimeout(() => {
             toast.classList.remove('show');
+            toast.style.opacity = "0";
+            toast.style.visibility = "hidden";
+            toast.style.transform = "translateY(-20px)";
         }, 4000);
     } else {
-        console.error("Error: 'contactToast' element HTML mein nahi mila!");
+        console.error("Error: contactToast element nahi mila!");
     }
 }
 
-// Manual Close Toast Notification Function
+// Manual Close Function (Dono Toast ke liye)
 function closeToast() {
-    const toast = document.getElementById('contactToast');
-    if (toast) {
-        toast.classList.remove('show');
-    }
+    const successToast = document.getElementById('successToast');
+    const contactToast = document.getElementById('contactToast');
+    
+    [successToast, contactToast].forEach(toast => {
+        if (toast) {
+            toast.classList.remove('show');
+            toast.style.opacity = "0";
+            toast.style.visibility = "hidden";
+            toast.style.transform = "translateY(-20px)";
+        }
+    });
 }
 
 
