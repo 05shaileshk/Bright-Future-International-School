@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academics - Bright Future International School</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/png" href="assets/learning.png" />
+    <!-- Font Awesome Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header & Navigation Bar -->
+    <!-- Screen ke Upar dikhne wala Success Popup Alert -->
+    <div id="successToast" class="toast-popup">
+      <i class="fas fa-check-circle"></i>
+      <span
+        >Your form has been successfully submitted! We will contact you
+        soon.</span
+      >
+      <button onclick="closeToast()" class="toast-close">&times;</button>
+    </div>
+
+    <!-- ******************* -->
+
+    <header>
+      <div class="header-wrap">
+        <div class="logo-container">
+          <img
+            src="assets/school logo.png"
+            alt="School Logo"
+            class="school-logo"
+          />
+          <h2 class="school-name">Bright Future International School</h2>
+        </div>
+
+        <button class="mobile-menu-btn" id="menuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="navBar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admission.html" class="active">Admission</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+             <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page title banner with animation -->
+
+    <section class="page-banner">
+      <div class="banner-animate">
+        <h1>Admission open 2026-27</h1>
+        <p>
+          <a href="index.html" style="color: #f3a900; text-decoration: none"
+            >Home</a
+          >
+          / Admission
+        </p>
+      </div>
+    </section>
+    <!-- Admission process section -->
+    <section class="admission-process">
+      <div class="section-title">
+        <h2>Admission Process</h2>
+        <p>Easy 3-step process to take admission in our school:</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="step-num">1</div>
+          <i class="fas fa-file-signature"></i>
+          <h3>Online Application</h3>
+          <p>Fill the form given below and submit the required details.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="step-num">2</div>
+          <i class="fas fa-user-check"></i>
+          <h3>Interaction / Test</h3>
+          <p>
+            There will be a short interaction/basic test with the child and
+            parents.
+          </p>
+        </div>
+        <div class="process-card">
+          <div class="step-num">3</div>
+          <i class="fas fa-id-card"></i>
+          <h3>Document Verification</h3>
+          <p>
+            Once the documents are verified, confirm the admission by submitting
+            the fees.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Admission form section -->
+    <section class="admission-form-section">
+      <div class="form-container">
+        <h2>Online Registration Form</h2>
+        <form action="" id="admissionForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="studentName">Student FullName *</label>
+              <input
+                type="text"
+                id="studentName"
+                required
+                placeholder="Students Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="parentName">Parent / Guardian Name</label>
+              <input
+                type="text"
+                id="parentName"
+                required
+                placeholder="Parents Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                required
+                placeholder="10 Digit Mobile Number"pattern="[0-9]{10}
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Email Address</label>
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="Enter a Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="classSelect">Applying for class *</label>
+              <select id="classSelect" required>
+                <option value="">--Select class--</option>
+                <option value="Nursery-UKG">Nursery-UKG</option>
+                <option value="class 1st-5th">Class 1st-5th</option>
+                <option value="class 6th-8th">class 6th-8th</option>
+                <option value="class 9th-10th">class 9th-10th</option>
+                <option value="class 11th-12th">class 11th-12th</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth *</label>
+              <input type="date" id="dob" required />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="address">Full Address*</label>
+            <textarea
+              id="address"
+              rows="3"
+              placeholder="Full Address..."
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+        <!-- <div id="sucessMsg" class="sucess-message">
+          Your form has been successfully submitted! we will contact you soon
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Bright Future International School</h3>
+          <p>
+            We are committed to providing quality education to children in a
+            wonderful and safe environment.
+          </p>
+          <div class="footer-socials">
+            <a href="#" target="_blank" class="social-icon facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" target="_blank" class="social-icon instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/shailesh-kumar-776431198" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" target="_blank" class="social-icon twitter"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a href="#" target="_blank" class="social-icon youtube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+             <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <p><strong>Address:</strong> Main Road, Hajipur, Bihar, India</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+          <p><strong>Email:</strong> info@brightfutureschool.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Bright Future International School. All Rights Reserved.
+        </p>
+        <p>
+          Design & Maintained by[ Shailesh Kumar]
+          <a href="https://www.freelancer.in/u/sinhask?sb=t">Freelancer</a>
+        </p>
+      </div>
+    </footer>
+    <script src="school.js"></script>
+  </body>
+</html>

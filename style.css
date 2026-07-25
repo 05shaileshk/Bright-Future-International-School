@@ -1,0 +1,1408 @@
+/* ==========================================================================
+   RESET & GLOBAL STYLING
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION STYLING (Logo on Top Center, Menu Below)
+   ========================================================================== */
+header {
+  background-color: #0c2340; /* Dark Blue Theme */
+  padding: 20px 0 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid #f2a900; /* Golden Border */
+}
+
+.header-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column; /* Stack logo box and nav vertically */
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo & Name Row aligned centrally in one line */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.school-logo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.school-name {
+  color: #f2a900;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Nav Menu Row under the logo */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 8px 20px;
+  transition: 0.3s ease;
+  border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #0c2340;
+  background-color: #f2a900; /* Full Golden button block fill */
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO SECTION STYLING
+   ========================================================================== */
+.hero {
+  background:
+    linear-gradient(rgba(12, 35, 64, 0.7), rgba(12, 35, 64, 0.7)),
+    url("assets/hero-bg.avif") no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #f2a900;
+  color: #0c2340;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #0c2340;
+}
+
+/* ==========================================================================
+   NOTICE BAR STYLING
+   ========================================================================== */
+.notice-bar {
+  display: flex;
+  background-color: #f2a900;
+  color: #0c2340;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.notice-title {
+  background-color: #0c2340;
+  color: #f2a900;
+  padding: 0 20px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.notice-text {
+  width: 100%;
+  align-self: center;
+}
+
+/* ==========================================================================
+   FEATURES SECTION STYLING
+   ========================================================================== */
+.features {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #0c2340;
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  border-top-color: #f2a900;
+}
+
+.box h3 {
+  margin-bottom: 15px;
+  color: #0c2340;
+  font-size: 1.4rem;
+}
+
+.box p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Page Banner style */
+
+.page-banner {
+  background:
+    linear-gradient(rgba(12, 35, 64, 0.85), rgba(12, 35, 64, 0.85)),
+    url("assets/hero-bg.jpg") no-repeat center center/cover;
+  text-align: center;
+  color: white;
+  padding: 50px 20px;
+}
+.page-banner h1 {
+  font-size: 3.9rem;
+  color: #25a900;
+  margin-bottom: 10px;
+}
+.page-banner p {
+  font-size: 1.6rem;
+}
+/* ==========================================================================
+   PAGE BANNER ANIMATION STYLING
+   ========================================================================== */
+
+/* Animation trigger class */
+.banner-animate {
+  opacity: 0; /* Default mein hidden rahega */
+  animation: fadeInUp 1s ease-out forwards; /* 1 second ka smooth animation */
+}
+
+/* Keyframes definition for fade-in and slide-up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-banner h1 {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.page-banner p {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* About us layer splits */
+.about-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.about-text {
+  flex-direction: 1;
+}
+
+.about-text h2 {
+  color: #0c2340;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+/* Vision and mission row */
+
+.vision-mission {
+  background-color: #f9fbfd;
+  padding: 60px 20px;
+}
+.vision-mission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  font-palette: 30px;
+}
+.vision-box,
+.mission-box {
+  flex: 1;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-bottom: 4px solid#0c2340;
+}
+.vision-box:hover,
+.mission-box:hover {
+  border-bottom-color: #f2a900;
+}
+.vision-mission i {
+  font-size: 2.5rem;
+  color: #f2a900;
+  margin-bottom: 20px;
+}
+.vision-mission h3 {
+  color: #0c2340;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.vision-mission p {
+  font-size: 0.98rem;
+  color: #666;
+  line-height: 1.6;
+}
+/* MOBILE RESOLUTION (Max-width: 768px) */
+@media (max-width: 768px) {
+  .page-banner h1 {
+    font-size: 2rem;
+  }
+
+  /* Stack Text and Image into one column */
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  /* Vision and mission stack horizontally to vertical box */
+  .vision-mission-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .vision-box,
+  .mission-box {
+    padding: 30px 20px;
+  }
+}
+
+/* Academics titles styles */
+
+/* section titles utility */
+
+.section-title {
+  text-align: center;
+  margin: 40px auto 20px;
+  padding: 0 20px;
+}
+
+.section-title h2 {
+  color: #0c2340;
+  font-size: 2.2rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: #f2a900;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.section-title p {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* tabs system layout */
+
+.academic-curriculum {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.tabs-container {
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-top: 30px;
+}
+.tab-buttons {
+  display: flex;
+  background-color: #0c2340;
+}
+.tab-btn {
+  display: flex;
+  padding: 18px 20px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.tab-btn:hover {
+  background-color: rgba(195, 164, 98, 0.2);
+  color: #2a4a71;
+}
+.tab-content {
+  display: none;
+  padding: 40px;
+  animation: fadeIn 0.5s ease;
+  -webkit-animation: fadeIn 0.5s ease;
+}
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h3 {
+  color: #0c2340;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+.tab-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.tab-content ul {
+  list-style: none;
+  padding: 0;
+}
+.tab-content ul li {
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tab-content ul li i {
+  color: #f2a900;
+}
+/* Facilities Grid Layout */
+
+.facilities-section {
+  background-color: #f8fafd;
+  padding: 60px 20px;
+}
+.facilities-grid {
+  max-width: 1200px;
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.facility-card {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.facility-card:hover {
+  transform: translateY(-5px);
+}
+.facility-card I {
+  font-size: 2.5rem;
+  color: #0c2340;
+  margin-bottom: 15px;
+}
+.facility-card h3 {
+  color: #0c2340;
+  margin-bottom: 10px;
+}
+.facility-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Basic keyframe for tab transition */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Responsive Design (Tablet & Mobile */
+
+@media (max-width: 992) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Resolution max-width : 768px */
+
+@media (max-width: 600px) {
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tab buttons block order stack setup */
+
+.tab-buttons {
+  flex-direction: column;
+}
+.tab-btn {
+  border-bottom: 1px solid rgba(255, 255, 255e, 0.1);
+  padding: 15px;
+}
+.tab-content {
+  padding: 25px 20px;
+}
+/* facilities grid single column stack */
+
+.facilities-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* admission process section */
+.admission-process {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+.process-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e8f0;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3s ease);
+}
+.process-card:hover {
+  transform: translateY(-5px);
+  border-color: #f2a900;
+}
+.step-num {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background-color: #f2a900;
+  color: #0c2340;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.process-card i {
+  font-size: 2.5rem;
+  color: #0c2340;
+  margin-bottom: 15px;
+}
+.process-card h3 {
+  color: #666;
+  margin-bottom: 10px;
+}
+.process-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* admission form layout */
+
+.admission-form-section {
+  background-color: #f8fafd;
+  padding: 60px 20px;
+}
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+.form-container h2 {
+  color: #0c2340;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  border-bottom: 2px solid #f2a900;
+  padding-bottom: 10px;
+  display: block;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 2, 1fr;
+  gap: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group .full-width {
+  margin-top: 20px;
+}
+.form-group label {
+  color: #0c2340;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.form-group input .form-group select,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0c2340;
+}
+.submit-btn {
+  width: 100%;
+  margin-top: 25px;
+  background-color: #0c2340;
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #f2a900;
+  color: #0c2340;
+}
+/* ==========================================================================
+   SUCCESS TOAST NOTIFICATION STYLING
+   ========================================================================== */
+
+/* Base hidden state: Default mein screen se completely gayab rahega */
+.toast-popup {
+  display: none !important;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 450px;
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  z-index: 10000;
+}
+
+/* Sirf Form Submit hone par JS is class ko add karega */
+.toast-popup.show {
+  display: flex !important;
+  animation: fadeInDown 0.4s ease;
+}
+
+.toast-popup i {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Slide Down Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (TABLET & MOBILE)
+   ========================================================================== */
+
+/* TABLET RESOLUTION (Max-width: 992px) */
+@media screen and (max-width: 992px) {
+  .toast-popup {
+    width: 85%;
+    font-size: 0.9rem;
+  }
+}
+
+/* MOBILE RESOLUTION (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* 
+       Note: Yahan humne .toast-popup ko 'display: flex' ya 'display: block' 
+       NAHI diya hai taaki screen choti karne par popup apne aap na aaye!
+    */
+  .toast-popup {
+    top: 15px;
+    width: 92%;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+
+  .toast-popup i {
+    font-size: 1.1rem;
+  }
+
+  .toast-close {
+    font-size: 1.3rem;
+  }
+}
+/* ==========================================================================
+   FOOTER STYLING
+   ========================================================================== */
+footer {
+  background-color: #0c2340;
+  color: #ffffff;
+  padding: 60px 0 20px 0;
+  border-top: 3px solid #f2a900;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-col h3 {
+  color: #f2a900;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 45px;
+  height: 2px;
+  background-color: #f2a900;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 12px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #f2a900;
+  padding-left: 6px;
+}
+
+/* Social Icons */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.social-icon.facebook:hover {
+  background-color: #1877f2;
+}
+.social-icon.instagram:hover {
+  background-color: #e1306c;
+}
+.social-icon.linkedin:hover {
+  background-color: #0077b5;
+}
+.social-icon.twitter:hover {
+  background-color: #000000;
+}
+.social-icon.youtube:hover {
+  background-color: #ff0000;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin-bottom: 5px;
+}
+footer a {
+  text-decoration: none;
+  color: #f2a900;
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* TABLET LAYOUT RESOLUTION */
+@media (max-width: 992px) {
+  .school-name {
+    font-size: 1.8rem;
+  }
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+}
+
+/* MOBILE LAYOUT RESOLUTION */
+@media (max-width: 768px) {
+  /* Mobile standard inline header back layout row switch */
+  .header-wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .school-name {
+    font-size: 1.2rem;
+  }
+
+  .school-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0c2340;
+    border-bottom: 3px solid #f2a900;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px 0;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-col h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-col ul li a:hover {
+    padding-left: 0;
+  }
+}
+
+/* ==========================================================================
+   GALLERY PAGE SPECIFIC STYLING
+   ========================================================================== */
+
+.gallery-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* Category Filter Tabs */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid #0c2340;
+  color: #0c2340;
+  padding: 8px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #0c2340;
+  color: #f2a900;
+}
+
+/* Gallery Grid System */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #e9ecef;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Zoom Effect */
+}
+
+/* Overlay Styling */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 35, 64, 0.8); /* Dark Blue Overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay i {
+  font-size: 2rem;
+  color: #f2a900;
+  margin-bottom: 10px;
+}
+
+.gallery-overlay p {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Lightbox Modal Box */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox-content {
+  max-width: 85%;
+  max-height: 80vh;
+  border: 3px solid #f2a900;
+  border-radius: 6px;
+  animation: zoomIn 0.3s ease;
+}
+
+.lightbox-caption {
+  color: #ffffff;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+  color: #f2a900;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Grid Rules */
+@media screen and (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet par 2 Column */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Mobile par 1 Column */
+  }
+  .gallery-item {
+    height: 220px;
+  }
+}
+
+/* contact page styling */
+
+.contact-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+.contact-container {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* left:contact info styling */
+
+.contact-info {
+  flex: 1;
+}
+.contact-info h2 {
+  color: #0c2340;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  position: relative;
+}
+.contact-info h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #f2a900;
+  margin-top: 5px;
+}
+.contact-info p {
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #f8f9fa;
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #0c2340;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.info-icon {
+  width: 45px;
+  height: 45px;
+  background-color: #0c2340;
+  color: #f2a900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.info-details h4 {
+  color: #0c2340;
+  font-size: 1.05rem;
+  margin-bottom: 3px;
+}
+.info-details p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+/* Right: contact form styling */
+
+.contact-form-box {
+  flex-direction: 1;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #f2a900;
+}
+.contact-form-box h2 {
+  color: #0c2340;
+  font-size: 1.8rem;
+  margin-bottom: #f2a900;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  color: #0c2340;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+.form-group input .form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border: radius 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.38;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0c2340;
+}
+.submit-btn {
+  width: 100%;
+  background-color: #0c2340;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.submit-btn:hover {
+  background-color: #f2a900;
+}
+/* Map section */
+.map-section {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  line-height: 0;
+}
+
+/* tablet view */
+@media screen and (max-width: 992px) {
+  .screen-section {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-info h2,
+  .contact-form-box h2 {
+    font-size: 1.6rem;
+  }
+  .info-card {
+    padding: 15px;
+  }
+}
+
+/* MOBILE VIEW (Max-width: 576px) */
+@media screen and (max-width: 57px) {
+  .contact-section {
+    margin: 20px auto;
+  }
+  .contact-form-box {
+    padding: 18px 15px;
+    border-radius: 8px;
+  }
+  .contact-info h2,
+  .contact-form-box h2 {
+    font-size: 1.4rem;
+  }
+  .info-card {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px 15px;
+  }
+  .info-icon {
+    width: 38px;
+    height: 12px;
+    font-size: 1rem;
+  }
+  .info-details h4 {
+    font-size: 0.95rem;
+  }
+  .info-details p {
+    font-family: 0.85rem;
+    word-break: break-word;
+  }
+  .form-group {
+    margin-bottom: 14px;
+  }
+  .form-group label {
+    font-size: 0.88rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  .submit-btn {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  .map-section iframe {
+    height: 260px;
+  }
+}
+
+/* Toast Notification Main Styling */
+.toast-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #0c2340;
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 5px solid #f2a900;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  z-index: 9999;
+
+  /* Animation aur Hidden State */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Jab JS se .show class add hoti hai tab ye active hota hai */
+.toast-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #e5f014;
+}
+
+.toast-content i {
+  color: #f2a900;
+  font-size: 1.2rem;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.toast-close:hover {
+  color: #f2a900;
+}

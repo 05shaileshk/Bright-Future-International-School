@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academics - Bright Future International School</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/png" href="assets/learning.png" />
+    <!-- Font Awesome Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header & Navigation Bar -->
+    <header>
+      <div class="header-wrap">
+        <div class="logo-container">
+          <img
+            src="assets/school logo.png"
+            alt="School Logo"
+            class="school-logo"
+          />
+          <h2 class="school-name">Bright Future International School</h2>
+        </div>
+
+        <button class="mobile-menu-btn" id="menuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="navBar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html" class="active">Academics</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+             <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- page title banner with animation-->
+    -->
+
+    <section class="page-banner">
+      <div class="banner-animate">
+        <h1>academics</h1>
+        <p>
+          <a href="index.html" style="color: #f2a900; text-decoration: none"
+            >Home</a
+          >/ Academics
+        </p>
+      </div>
+    </section>
+
+    <!-- curriculum section ( tabs system) -->
+
+    <section class="academic-curriculum">
+      <div class="section-title">
+        <h2>Our Educational Structure</h2>
+        <p>
+          We design the best curriculum for children at every level, according
+          to their needs
+        </p>
+      </div>
+      <div class="tabs-container">
+        <!-- tabs buttons -->
+        <div class="tab-buttons">
+          <button class="tab-btn active" onclick="openTab(event, 'primary')">
+            Primary (1st-5th)
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'middle')">
+            Middle(6th-8th)
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'secondary')">
+            High School (9th-12th)
+          </button>
+        </div>
+        <!-- tabs content -->
+
+        <div id="primary" class="tab-content active">
+          <h3>Primary education</h3>
+          <p>
+            In the early years, children are taught basic concepts through
+            interactive and fun learning. The focus and on activity based
+            learning and communication skills
+          </p>
+          <ul>
+            <li>
+              <i class="fas fa-check-circle"></i>Basic Math & language skills
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>Arts,Craft & Music classes
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>Fundamental Science & Moral
+              Values
+            </li>
+          </ul>
+        </div>
+        <div id="middle" class="tab-content">
+          <h3>Middle School Curriculum</h3>
+          <p>
+            At this level,deeper knowledge of subjects begins to develop.
+            children are encouraged to practice critical thinking, problem
+            solving and teamwork
+          </p>
+          <ul>
+            <li>
+              <i class="fas fa-check-circle"></i>Advanced Mathematics & Science
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>Computer Applications & Coding
+              Basics
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>Social Science & Languages
+            </li>
+          </ul>
+        </div>
+        <div id="secondary" class="tab-content">
+          <h3>High School & Higher secondary</h3>
+          <p>
+            Advanced and focused educational structure is provided for
+            preparation of board exams and competitive exams (JEE / NEET)
+          </p>
+          <ul>
+            <li>
+              <i class="fas fa-check-circle"></i>Science Commerce & Arts Stream
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>Career Counseling & Personality
+              Development
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>Lab Experiments & Project Work
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Academic facilities Grid -->
+
+    <section class="facilities-section">
+      <div class="section-title">
+        <h2>World Class Facilities</h2>
+      </div>
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <i class="fas fa-flask"></i>
+          <h3>Modern Labs</h3>
+          <p>
+            Fully equipped safe and modern labs for Physics,Chemistry and
+            Biology
+          </p>
+        </div>
+        <div class="facility-card">
+          <i class="fas fa-book-reader"></i>
+          <h3>Digital Library</h3>
+          <p>
+            A collection of thousand of books and e-books where children get a
+            peaceful environment
+          </p>
+        </div>
+        <div class="facility-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Computer Lab</h3>
+          <p>
+            Programming and tech education space with the latest computers and
+            high speed internet
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Bright Future International School</h3>
+          <p>
+            We are committed to providing quality education to children in a
+            wonderful and safe environment.
+          </p>
+          <div class="footer-socials">
+            <a href="#" target="_blank" class="social-icon facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" target="_blank" class="social-icon instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+           <a href="https://www.linkedin.com/in/shailesh-kumar-776431198" target="_blank" class="social-icon linkedin">
+           <i class="fab fa-linkedin-in"></i>
+           </a>
+            <a href="#" target="_blank" class="social-icon twitter"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a href="#" target="_blank" class="social-icon youtube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+             <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <p><strong>Address:</strong> Main Road, Hajipur, Bihar, India</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+          <p><strong>Email:</strong> info@brightfutureschool.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Bright Future International School. All Rights Reserved.
+        </p>
+        <p>
+          Design & Maintained by[ Shailesh Kumar]
+          <a href="https://www.freelancer.in/u/sinhask?sb=t">Freelancer</a>
+        </p>
+      </div>
+    </footer>
+    <script src="school.js"></script>
+  </body>
+</html>
